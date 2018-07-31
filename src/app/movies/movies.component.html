@@ -28,6 +28,9 @@
 
 
 <p> movies results</p>
-<p *ngFor = "let movie of moviesService.currentSearch"> {{movie.title}}</p> 
+<p *ngFor = "let movie of moviesService.currentSearch"> 
+<img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}">
+
+{{movie.title}}</p> 
 
 
