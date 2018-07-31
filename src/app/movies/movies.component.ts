@@ -16,8 +16,9 @@ export class MoviesComponent implements OnInit {
     title: any;
     movie: any;
     image: any;
-  
+    movies;
   ngOnInit() {
+    this.movies = this.moviesService.currentSearch
   }
   
   getMovie(){
@@ -25,11 +26,11 @@ export class MoviesComponent implements OnInit {
     this.moviesService.getMovieData(this.title);
   }
   
-  getimage(){
+  // getimage(){
     
-  this.moviesService.getMovieImage(this.image);
+  // this.moviesService.getMovieImage(this.image);
     
-  }
+  // }
   
   
 
