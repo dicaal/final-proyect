@@ -1,0 +1,33 @@
+<p>
+  movies works!
+</p>
+
+
+ 
+
+        <!--<input type="text" class="form-control" placeholder="Search for movies..." [(ngModel)]="title" name="title" (keyup.enter)="getMovie()">-->
+
+<header class="header-4">
+    <div class="branding">
+        <a href="..." class="nav-link">
+            <!--<clr-icon shape="vm-bug"></clr-icon>-->
+            <span class="title">Movie Search</span>
+        </a>
+    </div>
+    <form class="search">
+        <label for="search_input">
+            <input type="text" class="form-control" placeholder="Search for movies..." [(ngModel)]="title" name="title" (keyup.enter)="getMovie()">
+        </label>
+    </form>
+    <div class="header-actions">
+        <a href="..." class="nav-link nav-icon">
+            <!--<clr-icon shape="cog"></clr-icon>-->
+        </a>
+    </div>
+</header>
+
+
+<p> movies results</p>
+<p *ngFor = "let movie of currentSearch"> {{movie.title}}</p> 
+
+
