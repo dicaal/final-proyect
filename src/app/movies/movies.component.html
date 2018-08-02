@@ -1,11 +1,9 @@
-<p>
-  movies works!
-</p>
+
 
 
  
 
-        <!--<input type="text" class="form-control" placeholder="Search for movies..." [(ngModel)]="title" name="title" (keyup.enter)="getMovie()">-->
+       
 
 <header class="header-4">
     <div class="branding">
@@ -17,6 +15,9 @@
     <form class="search">
         <label for="search_input">
             <input type="text" class="form-control" placeholder="Search for movies..." [(ngModel)]="title" name="title" (keyup.enter)="getMovie()">
+            <span class="input-group-btn">
+          <button class="btn btn-primary" type="button" (click)="getMovie()">Go!</button>
+        </span>
         </label>
     </form>
     <div class="header-actions">
@@ -27,10 +28,65 @@
 </header>
 
 
-<p> movies results</p>
-<p *ngFor = "let movie of moviesService.currentSearch"> 
-<img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}">
+        
+    
+        <div class = "card">
+            <span class="label label-info">Movie results</span>
+              <div *ngFor = "let movie of moviesService.currentSearch">
+            <!--<span class="label label-orange">Title: {{movie.title}}</span>-->
+            <!--<span class="label label-blue">Title: {{movie.id}}</span>-->
+        <!--<h3>Title: {{movie.title}}</h3>        -->
+        
+        
+        <ul class="list">
+            <li>Title: {{movie.title}}</li>
+            <li>id: {{movie.id}}</li>
+            
+        </ul>
+    
+    
+        <img class = car-img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}">
+        
+        
+    </div>
+</div>
 
-{{movie.title}}</p> 
 
 
+
+
+
+
+<!--<div class="row">-->
+<!--    <div class="clr-col-sm-12 clr-col-md-8 ">-->
+<!--        <span>-->
+
+<!--<p>{{movie.id}}</p>-->
+            
+<!--        </span>-->
+<!--    </div>-->
+    
+<!--    <div class="clr-col-sm-12 clr-col-md-4">-->
+<!--        <span>card</span>-->
+<!--    </div>-->
+    
+<!--</div>-->
+
+<!--<div *ngIf="moviesService.currentSearch">-->
+<!--  <h3 class="orange-text">Search Results</h3>-->
+<!--  <div class="row is-flex">-->
+<!--    <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of moviesService.currentSearch; let i = index;">-->
+      <!--<movie-card [title]="title"></movie-card>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--<h1>{{_movie.genreName}}</h1>-->
+
+<!--<div class="row">-->
+<!--    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" *ngFor="let result of _movie.currentGenre.results">-->
+<!--        <div class="card">-->
+<!--            <div class="card-img">-->
+<!--                <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{result.poster_path}}" alt="..." />-->
+<!--            </div>-->

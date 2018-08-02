@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import{ HttpClient} from '@angular/common/http'
+import {Jsonp, URLSearchParams} from '@angular/http';
+import 'rxjs/Rx';
 
 
 @Injectable()
@@ -10,12 +12,13 @@ export class MoviesService {
  query: string = '&query='; 
  movie_id: string = "'";
  
+ 
   constructor(private http: HttpClient) {}
     
   movieSearch: any;
   currentSearch: any;
   currentGender: any;
-  genreId: any;
+  // getMovieId: any;
   generName: any;
     
     getMovieData (title) {
@@ -29,16 +32,16 @@ export class MoviesService {
     // return this.http.get(`https://api.themoviedb.org/3/movie/551?api_key=40debfced8500981c913ebed5ad8ed68`);
   }
   
-// getMovieImage(image){
-//     let urlRequest = this.base_url + this.apikey + this.movie_id + image;
-//     return this.http.get(urlRequest)
-//     .subscribe(data =>{
-//     this.currentSearch = data
-//     console.log("currentSearch", this.currentSearch)
-//     })}
-    
+
+getMovieId(id) {
+    let urlRequest = this.base_url + this.apikey + this.query + id;
+    return this.http.get(urlRequest)
+    .subscribe(data => {
+     this.currentSearch = data.results
+     console.log("currentSearch", this.currentSearch)
+    })
 
 
-
+ }
 
 }

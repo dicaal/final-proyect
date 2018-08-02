@@ -10,13 +10,35 @@ import { MoviesService} from './movies.service'
 })
 export class MoviesComponent implements OnInit {
   
-   
-  constructor(private moviesService: MoviesService ) { }
-
-    title: any;
+  
+   title: any;
     movie: any;
     image: any;
+    id: any;
     movies;
+    // searchRes: Array<Object>;
+    // popularList: Array<Object>;
+    // theatersList: Array<Object>;
+    // topRatedList: Array<Object>;
+    // searchRes: Array<Object>;
+    // searchStr: string;
+   
+  constructor(private moviesService: MoviesService ) {
+    
+    
+     
+    // .subscribe(res => {
+    //   this.popularList = res.results;
+    // });
+    // this.moviesService.getInTheaters().subscribe(res => {
+    //   this.theatersList = res.results;
+    // });
+    // this.moviesService.getTopRatedMovies().subscribe(res => {
+    //   this.topRatedList = res.results;
+    // });
+  }
+
+   
   ngOnInit() {
     this.movies = this.moviesService.currentSearch
   }
@@ -26,12 +48,11 @@ export class MoviesComponent implements OnInit {
     this.moviesService.getMovieData(this.title);
   }
   
-  // getimage(){
-    
-  // this.moviesService.getMovieImage(this.image);
-    
-  // }
   
+  getId(){
+    
+  this.moviesService.getMovieId(this.id);
+   }
   
 
 }
