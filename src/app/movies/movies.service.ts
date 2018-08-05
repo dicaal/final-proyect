@@ -11,7 +11,7 @@ export class MoviesService {
  base_url: string = 'https://api.themoviedb.org/3/search/movie?';
  query: string = '&query='; 
  movie_id: string = "'";
- 
+ popular_data: string ="popular?"
  
   constructor(private http: HttpClient) {}
     
@@ -43,5 +43,21 @@ getMovieId(id) {
 
 
  }
+ 
+ 
+ 
+  getMainPage() {
+  let urlRequest = this.base_url + this.popular_data + this.apikey + this.query ;
+  
+     return this.http.get(urlRequest)     
+     .subscribe(data => {
+       this.currentSearch = data.results
+       console.log("currentSearch", this.currentSearch)
+     })
+
+  }
+ 
+ 
+ 
 
 }

@@ -54,5 +54,17 @@ export class MoviesComponent implements OnInit {
   this.moviesService.getMovieId(this.id);
    }
   
+  // getMovieVote(){
+    
+  // this.moviesService.getMovieVote(this.vote_average);
+  // }
+
+  // getMainPage(){
+  
+  // this.moviesService.getPopularData()
+
+  //   }
 
 }
+
+
